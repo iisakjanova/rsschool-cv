@@ -29,3 +29,33 @@ I developed responsive, cross-browser adaptive web pages using HTML, CSS (includ
 I have experience developing backend REST API using node.js, express.js, bcrypt, CORS, mongoDB, mongoose, postgreSQL. 
 ### Git
 While working on my projects, I used Git for storing and managing my code. 
+
+----
+## Code example:
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
+```
+const longestCommonPrefix = function(strs) {
+    if (strs.length === 1) {
+        return strs[0];
+    }
+    
+    let prefix = '';
+    const firstWord = strs[0];
+    
+    for (let i = 0; i < firstWord.length; i++) {
+        for (let j = 1; j < strs.length; j++ ) {
+            const currentWord = strs[j];
+            
+            if (firstWord[i] !== currentWord[i]) {
+                return prefix;
+            }
+        }
+        
+        prefix = prefix + firstWord[i];
+    }
+    
+    return prefix;
+};
+``` 
